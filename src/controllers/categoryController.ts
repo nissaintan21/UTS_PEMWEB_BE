@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { PrismaClient } from "@prisma/client";
 
-// Inisialisasi Prisma Client untuk tersambung ke PostgreSQL
 const prisma = new PrismaClient();
 
 // 1. GET ALL CATEGORIES

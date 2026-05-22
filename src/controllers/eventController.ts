@@ -1,8 +1,5 @@
 import { Request, Response } from 'express';
-import { Event } from "../types/event";
 import { prisma } from '../lib/db.js';
-
-let events: Event[] = [];
 
 //1. menampilkan semua event 
 export const getAllEvents = async (req: Request, res: Response) => {
@@ -32,7 +29,7 @@ export const createEvent = async (req: Request, res: Response) => {
         }
 
         // jika data sudah valid, buat event baru
-        const newEvent: Event = await prisma.event.create({
+        const newEvent = await prisma.event.create({
             data: {
                 name,
                 categoryId,
